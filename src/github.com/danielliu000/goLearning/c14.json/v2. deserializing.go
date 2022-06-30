@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type Person struct {
+type Person2 struct {
 	Id       int    `json:"id"`
 	Name     string `json:"name"`
 	Age      int    `json:"age"`
@@ -20,8 +20,9 @@ const (
 	jsonData2 = "[{\"age\":15,\"gender\":\"female\",\"name\":\"Tom\"}," +
 		"{\"age\":5,\"gender\":\"male\",\"name\":\"jack\"}]"
 )
-func unMarshalStruct () {
-	person := Person{}
+
+func unMarshalStruct() {
+	person := Person2{}
 	err := json.Unmarshal([]byte(jsonData1), &person)
 	if err != nil {
 		fmt.Println(err)
@@ -29,7 +30,7 @@ func unMarshalStruct () {
 	}
 	fmt.Println(person)
 }
-func unMarshalMap () {
+func unMarshalMap() {
 
 	//反序列化时不需要再make了
 	var myMap map[string]interface{}
@@ -41,7 +42,7 @@ func unMarshalMap () {
 	}
 	fmt.Println(myMap)
 }
-func unMarshalSlice () {
+func unMarshalSlice() {
 	var mySlice []map[string]interface{}
 
 	err := json.Unmarshal([]byte(jsonData2), &mySlice)
