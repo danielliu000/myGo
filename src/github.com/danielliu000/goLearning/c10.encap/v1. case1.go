@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"model/person"
+	"model/person" // GoPath 下 找到Model/person
 )
+
 func main() {
 	p := person.NewPerson("Daniel")
 	p.SetAge(30)
